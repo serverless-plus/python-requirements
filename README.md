@@ -1,6 +1,6 @@
 # python-requirements
 
-## Introduction
+> Notice: This project is a rewrite from [serverless-python-requirements](https://github.com/UnitedIncome/serverless-python-requirements) which is a serverless plugin.
 
 Serverless Python Requirements Component
 
@@ -27,41 +27,20 @@ Just create the following simple boilerplate:
 ```shell
 $ touch serverless.yml
 ```
+
 ### 3. Configure
 
 ```yml
 # serverless.yml
 
 MyComponent:
-  component: @yugasun/py-requirements
+  component: '@yugasun/python-requirements'
   inputs:
-    slim: false,
-    slimPatterns: false,
-    slimPatternsAppendDefaults: true,
-    zip: false,
-    layer: false,
-    cleanupZipHelper: true,
-    invalidateCaches: false,
-    fileName: 'requirements.txt',
-    usePipenv: true,
-    usePoetry: true,
-    runtime: 'python3.6',
-    pythonBin: 'python',
-    dockerizePip: false,
-    dockerSsh: false,
-    dockerImage: null,
-    dockerFile: null,
-    dockerEnv: false,
-    dockerBuildCmdExtraArgs: [],
-    dockerRunCmdExtraArgs: [],
-    dockerExtraFiles: [],
-    useStaticCache: true,
-    useDownloadCache: true,
-    cacheLocation: false,
-    staticCacheMaxVersions: 0,
-    pipCmdExtraArgs: [],
-    noDeploy: [],
-    vendor: ''
+    codeUri: ./
+    include:
+      - handler.py
+    dockerizePip: true
+    zip: true
 ```
 
 - [More Options](./docs/configure.md)
