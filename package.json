@@ -1,0 +1,93 @@
+{
+  "name": "@yugasun/python-requirements",
+  "description": "Serverless Python Requirements Component",
+  "version": "0.1.0",
+  "main": "serverless.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "python-requirements",
+    "python",
+    "pip",
+    "requirements",
+    "serverless",
+    "serverless-component",
+    "serverlesscomponent"
+  ],
+  "scripts": {
+    "commitlint": "commitlint -f HEAD@{15}",
+    "lint": "eslint --ext .js,.ts,.tsx .",
+    "lint:fix": "eslint --fix --ext .js,.ts,.tsx .",
+    "prettier": "prettier --check **/*.{css,html,js,json,md,yaml,yml}",
+    "prettier:fix": "prettier --write **/*.{css,html,js,json,md,yaml,yml}",
+    "prepare-release": "standard-version && prettier --write CHANGELOG.md"
+  },
+  "author": "yugasun",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.*": [
+      "eslint --fix --ext .js,.ts,.tsx .",
+      "git add"
+    ],
+    "**/*.{css,html,js,json,md,yaml,yml}": [
+      "prettier -c",
+      "git add"
+    ]
+  },
+  "standard-version": {
+    "skip": {
+      "commit": true,
+      "tag": true
+    }
+  },
+  "dependencies": {
+    "@serverless/core": "^1.0.0",
+    "@iarna/toml": "^2.2.3",
+    "appdirectory": "^0.1.0",
+    "bluebird": "^3.0.6",
+    "fs-extra": "^7.0.0",
+    "glob-all": "^3.1.0",
+    "is-wsl": "^2.0.0",
+    "jszip": "^3.1.0",
+    "lodash.get": "^4.4.2",
+    "lodash.set": "^4.3.2",
+    "lodash.uniqby": "^4.0.0",
+    "lodash.values": "^4.3.0",
+    "rimraf": "^2.6.2",
+    "sha256-file": "1.0.0",
+    "shell-quote": "^1.6.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "babel-eslint": "9.0.0",
+    "eslint": "5.6.0",
+    "eslint-config-prettier": "^3.6.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "github-release-from-cc-changelog": "^2.2.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.15.3",
+    "standard-version": "^7.0.1"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yugasun/pyton-requirements.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yugasun/pyton-requirements/issues"
+  },
+  "homepage": "https://github.com/yugasun/pyton-requirements#readme"
+}
