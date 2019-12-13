@@ -44,7 +44,8 @@ class RequmentsComponent extends Component {
         staticCacheMaxVersions: 0,
         pipCmdExtraArgs: [],
         noDeploy: [],
-        vendor: ''
+        vendor: '',
+        include: []
       },
       inputs
     )
@@ -71,12 +72,6 @@ class RequmentsComponent extends Component {
       const defaultImage = `lambci/lambda:build-${options.runtime}`
       options.dockerImage = options.dockerImage || defaultImage
     }
-    if (options.layer) {
-      // If layer was set as a boolean, set it to an empty object to use the layer defaults.
-      if (options.layer === true) {
-        options.layer = {}
-      }
-    }
     return options
   }
 
@@ -85,7 +80,7 @@ class RequmentsComponent extends Component {
 
     const options = this.initOptions(inputs)
 
-    const servicePath = path.join(process.cwd(), inputs.codeUri)
+    const servicePath = path.join(process.cwd(), inputs.codeUri || '.')
 
     this.state = {
       servicePath,
@@ -117,7 +112,9 @@ class RequmentsComponent extends Component {
 
     await this.save()
 
-    return {}
+    return {
+      include: options.include
+    }
   }
 
   // eslint-disable-next-line

@@ -8,6 +8,8 @@
 MyComponent:
   component: '@yugasun/python-requirements'
   inputs:
+    codeUri: ./
+    include: []
     slim: false
     slimPatterns: false
     slimPatternsAppendDefaults: true
@@ -43,6 +45,8 @@ Main param description
 
 | Name                       | Required | Default              | Description                                                                                                                                                                 |
 | -------------------------- | -------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| codeUri                       | false    | `process.cwd()`              |  Specify source code path |
+| include                       | false    | `[]`              | include files for cloud function zip |
 | slim                       | false    | `false`              | Whether strip the .so files, remove **pycache** and dist-info directories as well as .pyc and .pyo files. (Works on non 'win32' environments)                               |
 | slimPatterns               | false    | `false`              | To specify additional directories to remove from the installed packages                                                                                                     |
 | slimPatternsAppendDefaults | false    | `true`               | To overwrite the default patterns set the option slimPatternsAppendDefaults to false                                                                                        |
