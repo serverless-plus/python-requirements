@@ -110,6 +110,9 @@ class RequmentsComponent extends Component {
     await install()
     await invalidateCaches()
 
+    // push requirements folder to options.include
+    options.include.push(path.join(servicePath, '.serverless/requirements'))
+
     await this.save()
 
     return {

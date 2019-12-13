@@ -32,12 +32,12 @@
     }
   },
   "lint-staged": {
-    "**/*.*": [
-      "eslint --fix --ext .js,.ts,.tsx .",
+    "**/*.{js,ts,tsx}": [
+      "npm run lint:fix",
       "git add"
     ],
     "**/*.{css,html,js,json,md,yaml,yml}": [
-      "prettier -c",
+      "npm run prettier:fix",
       "git add"
     ]
   },
