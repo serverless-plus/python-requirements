@@ -1,5 +1,7 @@
 # python-requirements
 
+[![NPM downloads](http://img.shields.io/npm/dm/@yugasun/python-requirements.svg?style=flat-square)](http://www.npmtrends.com/@yugasun/python-requirements)
+
 > Notice: This project is a rewrite from [serverless-python-requirements](https://github.com/UnitedIncome/serverless-python-requirements) which is a serverless plugin.
 
 Serverless Python Requirements Component
