@@ -1,7 +1,7 @@
 {
   "name": "@slsplus/python-requirements",
   "description": "Serverless Python Requirements Component",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "serverless.js",
   "publishConfig": {
     "access": "public"
