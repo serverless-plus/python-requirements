@@ -1,6 +1,6 @@
 # python-requirements
 
-[![NPM downloads](http://img.shields.io/npm/dm/@yugasun/python-requirements.svg?style=flat-square)](http://www.npmtrends.com/@yugasun/python-requirements)
+[![NPM downloads](http://img.shields.io/npm/dm/@slsplus/python-requirements.svg?style=flat-square)](http://www.npmtrends.com/@slsplus/python-requirements)
 
 > Notice: This project is a rewrite from [serverless-python-requirements](https://github.com/UnitedIncome/serverless-python-requirements) which is a serverless plugin.
 
@@ -36,7 +36,7 @@ $ touch serverless.yml
 # serverless.yml
 
 MyComponent:
-  component: '@yugasun/python-requirements'
+  component: '@slsplus/python-requirements'
   inputs:
     codeUri: ./
     include:

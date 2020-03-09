@@ -1,5 +1,5 @@
 {
-  "name": "@yugasun/python-requirements",
+  "name": "@slsplus/python-requirements",
   "description": "Serverless Python Requirements Component",
   "version": "0.1.2",
   "main": "serverless.js",
@@ -21,7 +21,7 @@
     "lint:fix": "eslint --fix --ext .js,.ts,.tsx .",
     "prettier": "prettier --check **/*.{css,html,js,json,md,yaml,yml}",
     "prettier:fix": "prettier --write **/*.{css,html,js,json,md,yaml,yml}",
-    "prepare-release": "standard-version && prettier --write CHANGELOG.md"
+    "release": "standard-version"
   },
   "author": "yugasun",
   "license": "MIT",
@@ -33,18 +33,17 @@
   },
   "lint-staged": {
     "**/*.{js,ts,tsx}": [
-      "npm run lint:fix",
-      "git add"
+      "eslint --fix --ext .js,.ts,.tsx .",
+      "git add ."
     ],
     "**/*.{css,html,js,json,md,yaml,yml}": [
       "npm run prettier:fix",
-      "git add"
+      "git add ."
     ]
   },
   "standard-version": {
     "skip": {
-      "commit": true,
-      "tag": true
+      "tag": false
     }
   },
   "dependencies": {
@@ -84,10 +83,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yugasun/pyton-requirements.git"
+    "url": "git+https://github.com/slsplus/pyton-requirements.git"
   },
   "bugs": {
-    "url": "https://github.com/yugasun/pyton-requirements/issues"
+    "url": "https://github.com/slsplus/pyton-requirements/issues"
   },
-  "homepage": "https://github.com/yugasun/pyton-requirements#readme"
+  "homepage": "https://github.com/slsplus/pyton-requirements#readme"
 }
